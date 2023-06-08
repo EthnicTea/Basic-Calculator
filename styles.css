@@ -1,0 +1,74 @@
+* {
+    font-family: 'Slackside One', cursive;
+    color: white;
+}
+/* El "*" es para abarcar todo el HTML*/
+
+body {
+    margin: 0;
+    background-color: #224870;
+}
+
+.container {
+    display: flex;
+    justify-content: center; /*Justify y Align es para alinear en el centro*/
+    align-items: center;
+    height: 100vh; /*Para bajar el contenido al centro*/
+}
+
+.calculadora {
+    display: grid;
+    grid-template-columns: repeat(4, 75px); /*Crea 4 Columnas y cada una de ellas tendrán un largo de 75 pixeles*/
+    grid-template-rows: 160px repeat(5, 75px); /*Crea 4 filas y cada una de ellas tendrán un ancho de pixeles*/
+    background-color: #00916e;
+    padding: 15px; /*Separar de los bordes*/
+    border-radius: 32px; /*Suavizado de los bordes de la calculadora*/
+    box-shadow: 15px 10px 0px #00000033 /*Sombra detrás de la calculadora, el primer número maneja el Eje-X, en este caso a la derecha
+    el segundo el Eje-Y, en este caso hacia abajo, luego es el blur de la sombra. Y por último el tamaño*/
+}
+
+button {
+    cursor: pointer;
+    margin: 5px;
+    padding: 0;
+    border-radius: 32px;
+    font-size: 1.5em;
+    border: none;
+    background-color: #00916e;
+    box-shadow: 5px 5px 10px -3px #00000040, -5px -5px 15px 3px #00ffc11f; /*Se añaden 2 sombras aquí*/
+}
+
+button:active {
+    background-color: #006f54;
+}
+
+button:focus {
+    outline: none;
+}
+
+.col-2 {
+    grid-column: span 2;
+}
+
+.display {
+    grid-column: 1 / -1; /*Arregla que el display era muy pequeño, lo deja a todo el ancho de la calculadora*/
+    padding: 16px;
+    display: flex;
+    margin: 10px 10px 20px; /*Esto es para evitar que este muy junto del los costados y de los numeros respectivamente*/
+    flex-direction: column; 
+    align-items: flex-end; /*Contenido arriba a la derecha*/
+    background-color: #363636;
+    border-radius: 32px;
+    text-align: right;
+    justify-content: space-between; /*Para que se separen los valores*/
+    word-break: break-all; /*Por si tiene que ir a 2 líneas*/
+    box-shadow: 0px 0px 2px 10px #00000033;
+}
+
+#valor-actual {
+    font-size: 1.5em;
+}
+
+#valor-anterior {
+    font-size: 2em;
+}
